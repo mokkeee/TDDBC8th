@@ -16,6 +16,15 @@ namespace TDDBC8th
 
         public override string ToString()
         {
+            if (imaginaryNumber == 1)
+            {
+                return "i";
+            }
+            if (imaginaryNumber == -1)
+            {
+                return "-i";
+            }
+
             return imaginaryNumber.ToString() + "i";
         }
     }

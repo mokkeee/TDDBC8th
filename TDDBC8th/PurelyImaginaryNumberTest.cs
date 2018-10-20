@@ -30,6 +30,8 @@ namespace TDDBC8th
             [DataTestMethod]
             [DataRow(2, "2i")]
             [DataRow(-2, "-2i")]
+            [DataRow(1, "i")]
+            [DataRow(-1, "-i")]
             public void 純虚数の文字列表記が合っていること(int input, string expected)
             {
                 var pin = new PurelyImaginaryNumber(input);
