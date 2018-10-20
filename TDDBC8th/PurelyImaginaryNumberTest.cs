@@ -27,17 +27,13 @@ namespace TDDBC8th
         [TestClass]
         public class 生成した純虚数の文字列表記
         {
-            [TestMethod]
-            public void 虚部2の純虚数の文字列表記は2iとなること()
+            [DataTestMethod]
+            [DataRow(2, "2i")]
+            [DataRow(-2, "-2i")]
+            public void 純虚数の文字列表記が合っていること(int input, string expected)
             {
-                var pin = new PurelyImaginaryNumber(2);
-                Assert.AreEqual("2i", pin.ToString());
-            }
-            [TestMethod]
-            public void 虚部マイナス2の純虚数の文字列表記はマイナス2iとなること()
-            {
-                var pin = new PurelyImaginaryNumber(-2);
-                Assert.AreEqual("-2i", pin.ToString());
+                var pin = new PurelyImaginaryNumber(input);
+                Assert.AreEqual(expected, pin.ToString());
             }
         }
     } 
