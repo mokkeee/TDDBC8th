@@ -13,5 +13,10 @@ namespace TDDBC8th
             }
             this.imaginaryNumber = imaginaryNumber;
         }
+
+        public override string ToString()
+        {
+            return imaginaryNumber.ToString() + "i";
+        }
     }
 }
