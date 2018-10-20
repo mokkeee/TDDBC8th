@@ -16,16 +16,21 @@ namespace TDDBC8th
 
         public override string ToString()
         {
-            if (imaginaryNumber == 1)
+            object _in;
+            switch(imaginaryNumber)
             {
-                return "i";
-            }
-            if (imaginaryNumber == -1)
-            {
-                return "-i";
+                case 1:
+                    _in = string.Empty;
+                    break;
+                case -1:
+                    _in = "-";
+                    break;
+                default:
+                    _in = imaginaryNumber;
+                    break;
             }
 
-            return imaginaryNumber.ToString() + "i";
+            return String.Format("{0}i", _in);
         }
     }
 }
