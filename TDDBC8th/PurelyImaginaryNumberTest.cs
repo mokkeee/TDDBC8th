@@ -38,5 +38,38 @@ namespace TDDBC8th
                 Assert.AreEqual(expected, pin.ToString());
             }
         }
+
+        [TestClass]
+        public class 同一性の判定
+        {
+            [DataTestMethod]
+            [DataRow(1, 1, true)]
+            [DataRow(1, 2, false)]
+            public void 虚部が同じ純虚数を同一と判定しそれ以外は異なると判定すること(int input1, int input2, bool expected)
+            {
+                var pin1 = new PurelyImaginaryNumber(input1);
+                var pin2 = new PurelyImaginaryNumber(input2);
+
+                Assert.AreEqual(expected, pin1.Equals(pin2));
+            }
+
+            [DataTestMethod]
+            [DataRow(null)]
+            [DataRow("1i")]
+            [DataRow(1)]
+            public void 純虚数と純虚数以外のオブジェクト比較がfalseとなること(object other)
+            {
+                var pin = new PurelyImaginaryNumber(1);
+                Assert.AreEqual(false, pin.Equals(other));
+            }
+
+            [TestMethod]
+            public void 虚部が同一の純虚数のハッシュコードが一致すること()
+            {
+                var pin = new PurelyImaginaryNumber(-1);
+                var other = new PurelyImaginaryNumber(-1);
+                Assert.AreEqual(true, pin.GetHashCode() == other.GetHashCode());
+            }
+        }
     } 
 }

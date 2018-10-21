@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.ComponentModel;
 namespace TDDBC8th
 {
     public class PurelyImaginaryNumber
@@ -31,6 +33,16 @@ namespace TDDBC8th
             }
 
             return String.Format("{0}i", _in);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return (obj is PurelyImaginaryNumber other) && this.imaginaryNumber == other.imaginaryNumber;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(imaginaryNumber);
         }
     }
 }
