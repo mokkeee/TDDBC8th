@@ -44,6 +44,7 @@ namespace TDDBC8th
         {
             [DataTestMethod]
             [DataRow(1, 1, true)]
+            [DataRow(1, -1, false)]
             [DataRow(1, 2, false)]
             public void 虚部が同じ純虚数を同一と判定しそれ以外は異なると判定すること(int input1, int input2, bool expected)
             {
@@ -60,7 +61,7 @@ namespace TDDBC8th
             public void 純虚数と純虚数以外のオブジェクト比較がfalseとなること(object other)
             {
                 var pin = new PurelyImaginaryNumber(1);
-                Assert.AreEqual(false, pin.Equals(other));
+                Assert.IsFalse(pin.Equals(other));
             }
 
             [TestMethod]
@@ -68,7 +69,7 @@ namespace TDDBC8th
             {
                 var pin = new PurelyImaginaryNumber(-1);
                 var other = new PurelyImaginaryNumber(-1);
-                Assert.AreEqual(true, pin.GetHashCode() == other.GetHashCode());
+                Assert.AreEqual(pin.GetHashCode(), other.GetHashCode());
             }
         }
     } 
