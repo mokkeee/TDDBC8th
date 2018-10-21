@@ -14,7 +14,7 @@ namespace TDDBC8th
             public void 虚部１の純虚数が生成できること()
             {
                 var pin = new PurelyImaginaryNumber(1);
-                Assert.AreEqual(1, pin.imaginaryNumber);
+                Assert.AreEqual(1, pin.ImaginaryNumber);
             }
 
             [TestMethod]

@@ -5,7 +5,7 @@ namespace TDDBC8th
 {
     public class PurelyImaginaryNumber
     {
-        public readonly int imaginaryNumber;
+        public readonly int ImaginaryNumber;
 
         public PurelyImaginaryNumber(int imaginaryNumber)
         {
@@ -13,13 +13,13 @@ namespace TDDBC8th
             {
                 throw new ArgumentException("虚数0の純虚数は生成できません");
             }
-            this.imaginaryNumber = imaginaryNumber;
+            this.ImaginaryNumber = imaginaryNumber;
         }
 
         public override string ToString()
         {
             object _in;
-            switch(imaginaryNumber)
+            switch(ImaginaryNumber)
             {
                 case 1:
                     _in = string.Empty;
@@ -28,7 +28,7 @@ namespace TDDBC8th
                     _in = "-";
                     break;
                 default:
-                    _in = imaginaryNumber;
+                    _in = ImaginaryNumber;
                     break;
             }
 
@@ -37,17 +37,17 @@ namespace TDDBC8th
 
         public override bool Equals(object obj)
         {
-            return (obj is PurelyImaginaryNumber other) && this.imaginaryNumber == other.imaginaryNumber;
+            return (obj is PurelyImaginaryNumber other) && this.ImaginaryNumber == other.ImaginaryNumber;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(imaginaryNumber);
+            return HashCode.Combine(ImaginaryNumber);
         }
 
         public PurelyImaginaryNumber GetConjugate()
         {
-            return new PurelyImaginaryNumber(-imaginaryNumber);
+            return new PurelyImaginaryNumber(-ImaginaryNumber);
         }
     }
 }
