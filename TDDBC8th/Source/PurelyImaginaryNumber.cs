@@ -13,6 +13,10 @@ namespace TDDBC8th
             {
                 throw new ArgumentException("虚数0の純虚数は生成できません");
             }
+            if( imaginaryNumber == int.MinValue)
+            {
+                throw new NotSupportedException("虚数" + int.MinValue + "の純虚数はサポートしていません");
+            }
             this.ImaginaryNumber = imaginaryNumber;
         }
 

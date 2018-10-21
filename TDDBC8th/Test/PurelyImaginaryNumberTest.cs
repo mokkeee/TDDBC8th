@@ -23,6 +23,13 @@ namespace TDDBC8th
             {
                 new PurelyImaginaryNumber(0);
             }
+
+            [TestMethod]
+            [ExpectedException(typeof(NotSupportedException))]
+            public void 虚部がIntMinの純虚数は生成できないこと()
+            {
+                new PurelyImaginaryNumber(int.MinValue);
+            }
         }
 
         [TestClass]
@@ -80,6 +87,8 @@ namespace TDDBC8th
             [DataTestMethod]
             [DataRow(1, -1)]
             [DataRow(-1, 1)]
+            [DataRow(int.MaxValue, -int.MaxValue)]
+            [DataRow(-int.MaxValue, int.MaxValue)]
             public void 共役が取得できること(int input, int expected)
             {
                 var pin = new PurelyImaginaryNumber(input);
