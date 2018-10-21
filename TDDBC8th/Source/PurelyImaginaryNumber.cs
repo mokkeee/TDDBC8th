@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.ComponentModel;
 namespace TDDBC8th
 {
     public class PurelyImaginaryNumber
