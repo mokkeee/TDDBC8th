@@ -44,5 +44,10 @@ namespace TDDBC8th
         {
             return HashCode.Combine(imaginaryNumber);
         }
+
+        public PurelyImaginaryNumber GetConjugate()
+        {
+            return new PurelyImaginaryNumber(-imaginaryNumber);
+        }
     }
 }

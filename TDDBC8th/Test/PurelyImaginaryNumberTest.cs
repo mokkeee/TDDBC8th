@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Net.Http.Headers;
 
 namespace TDDBC8th
 {
@@ -70,6 +71,21 @@ namespace TDDBC8th
                 var pin = new PurelyImaginaryNumber(-1);
                 var other = new PurelyImaginaryNumber(-1);
                 Assert.AreEqual(pin.GetHashCode(), other.GetHashCode());
+            }
+        }
+
+        [TestClass]
+        public class 共役の取得
+        {
+            [DataTestMethod]
+            [DataRow(1, -1)]
+            [DataRow(-1, 1)]
+            public void 共役が取得できること(int input, int expected)
+            {
+                var pin = new PurelyImaginaryNumber(input);
+                var conjugate = new PurelyImaginaryNumber(expected);
+
+                Assert.AreEqual(conjugate, pin.GetConjugate());
             }
         }
     } 
