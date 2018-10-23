@@ -11,6 +11,7 @@ namespace TDDBC8th
             {
                 throw new ArgumentException("虚数0の純虚数は生成できません");
             }
+            // 共役が取得できないので虚数int.MinValueはサポートしないß
             if( imaginaryNumber == int.MinValue)
             {
                 throw new NotSupportedException("虚数" + int.MinValue + "の純虚数はサポートしていません");
@@ -20,21 +21,15 @@ namespace TDDBC8th
 
         public override string ToString()
         {
-            object _in;
             switch(ImaginaryNumber)
             {
                 case 1:
-                    _in = string.Empty;
-                    break;
+                    return "i";
                 case -1:
-                    _in = "-";
-                    break;
+                    return "-i";
                 default:
-                    _in = ImaginaryNumber;
-                    break;
+                    return String.Format("{0}i", ImaginaryNumber);
             }
-
-            return String.Format("{0}i", _in);
         }
 
         public override bool Equals(object obj)
