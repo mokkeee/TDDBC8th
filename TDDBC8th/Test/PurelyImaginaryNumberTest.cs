@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace TDDBC8th
+namespace TDDBC8th.Test
 {
     [TestClass]
     public class 純虚数Test
