@@ -4,7 +4,9 @@ namespace TDDBC8th
     public class ImaginaryNumber
     {
         public readonly int RealPart;
-        public readonly int ImaginaryPart;
+        public int ImaginaryPart { get { return pin.ImaginaryNumber; }}
+
+        private PurelyImaginaryNumber pin;
 
         public ImaginaryNumber(int realPart, int imaginaryPart)
         {
@@ -12,12 +14,8 @@ namespace TDDBC8th
             {
                 throw new ArgumentException("実部が0の虚数は生成できません");
             }
-            if (imaginaryPart == 0)
-            {
-                throw new ArgumentException("虚部が０の虚数は生成できません");
-            }
             this.RealPart = realPart;
-            this.ImaginaryPart = imaginaryPart;
+            this.pin = new PurelyImaginaryNumber(imaginaryPart);
         }
     }
 }
