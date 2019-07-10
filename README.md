@@ -4,4 +4,4 @@
 
 課題は以下。
 
-http://devtesting.jp/tddbc/?TDDBC仙台08
+http://devtesting.jp/tddbc/?TDDBC仙台08%2F課題
