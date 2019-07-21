@@ -17,5 +17,13 @@ namespace TDDBC8th
             this.RealPart = realPart;
             this.pin = new PurelyImaginaryNumber(imaginaryPart);
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2}",
+                                 RealPart,
+                                 ImaginaryPart > 0 ? '+' : '-',
+                                 pin.Abs().ToString());
+        }
     }
 }

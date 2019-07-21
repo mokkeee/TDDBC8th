@@ -11,12 +11,17 @@ namespace TDDBC8th
             {
                 throw new ArgumentException("虚数0の純虚数は生成できません");
             }
-            // 共役が取得できないので虚数int.MinValueはサポートしないß
+            // 共役が取得できないので虚数int.MinValueはサポートしない
             if( imaginaryNumber == int.MinValue)
             {
                 throw new NotSupportedException("虚数" + int.MinValue + "の純虚数はサポートしていません");
             }
             this.ImaginaryNumber = imaginaryNumber;
+        }
+
+        public PurelyImaginaryNumber Abs()
+        {
+            return new PurelyImaginaryNumber(Math.Abs(this.ImaginaryNumber));
         }
 
         public override string ToString()
